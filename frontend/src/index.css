@@ -1,0 +1,10 @@
+@import "tailwindcss";
+:root {
+  /* ... other colors ... */
+  --color-accent-DEFAULT: #0ea5e9; /* sky-500 */
+  /* ... */
+  --color-bgMain: #f8fafc; /* slate-50 (THIS IS A VERY LIGHT COLOR, ALMOST WHITE) */
+  --color-bgCard: #ffffff; /* white */
+  /* ... */
+}
+

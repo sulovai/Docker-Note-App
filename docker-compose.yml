@@ -1,0 +1,27 @@
+
+
+services:
+  backend:
+    build: ./backend
+    container_name: fastapi-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: vite-frontend
+    ports:
+      - "5173:5173"  # required for Google OAuth redirect
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    working_dir: /app
+    command: npm run dev
+    env_file:
+      - ./frontend/.env
+    depends_on:
+      - backend
+    restart: always
